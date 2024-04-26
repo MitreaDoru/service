@@ -95,8 +95,8 @@ exports.postEditCar = (req, res, next) => {
                 car.anulFabricatiei = anulFabricatiei;
                 car.tipMotorizare = tipMotorizare;
                 car.capacitateMotor = capacitateMotor;
-                car.caiPutere = caiPutere !== 0 ? caiPutere : (kWPutere * 1.36).toFixed(2);
-                car.kWPutere = kWPutere !== 0 ? kWPutere : (caiPutere / 1.36.toFixed(2));
+                car.caiPutere = (caiPutere !== 0) ? caiPutere : (kWPutere * 1.36).toFixed(2);
+                car.kWPutere = (kWPutere !== 0) ? kWPutere : (caiPutere / 1.36.toFixed(2));
                 car.istoricService = istoricService
                 car.save();
                 res.json({
@@ -109,8 +109,8 @@ exports.postEditCar = (req, res, next) => {
                         anulFabricatiei,
                         tipMotorizare,
                         capacitateMotor,
-                        caiPutere: caiPutere !== 0 ? caiPutere : (kWPutere * 1.36).toFixed(2),
-                        kWPutere: kWPutere !== 0 ? kWPutere : (caiPutere / 1.36).toFixed(2),
+                        caiPutere: (caiPutere !== 0) ? caiPutere : (kWPutere * 1.36).toFixed(2),
+                        kWPutere: (kWPutere !== 0) ? kWPutere : (caiPutere / 1.36).toFixed(2),
                         istoricService: istoricService
                     }
                 })
