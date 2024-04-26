@@ -69,6 +69,7 @@ exports.postEditCar = (req, res, next) => {
     const capacitateMotor = req.body.capacitateMotor;
     const caiPutere = req.body.caiPutere;
     const kWPutere = req.body.kWPutere;
+    const istoricService = req.body.istoricService
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.json({
@@ -82,6 +83,7 @@ exports.postEditCar = (req, res, next) => {
                 capacitateMotor: capacitateMotor,
                 caiPutere: caiPutere,
                 kWPutere: kWPutere,
+                istoricService: istoricService
             }
         });
     } else {
@@ -96,6 +98,7 @@ exports.postEditCar = (req, res, next) => {
                 car.capacitateMotor = capacitateMotor;
                 car.caiPutere = caiPutere !== 0 ? caiPutere : (kWPutere * 1.36).toFixed(2);
                 car.kWPutere = kWPutere !== 0 ? kWPutere : (caiPutere / 1.36.toFixed(2));
+                car.istoricService = istoricService
                 car.save();
                 res.json({
                     message: "Masina editata", carEditedInfo: {
