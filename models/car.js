@@ -5,39 +5,39 @@ const carSchema = new Schema(
     {
         numarInmatriculare: {
             type: String,
-            required: true
+            required: false
         },
         serieSasiu: {
             type: String,
-            required: true
+            required: false
         },
         marca: {
             type: String,
-            required: true
+            required: false
         },
         model: {
             type: String,
-            required: true
+            required: false
         },
         anulFabricatiei: {
             type: Number,
-            required: true
+            required: false
         },
         tipMotorizare: {
             type: String,
-            required: true
+            required: false
         },
         capacitateMotor: {
             type: Number,
-            required: true
+            required: false
         },
         caiPutere: {
             type: Number,
-            required: true
+            required: false
         },
         kWPutere: {
             type: Number,
-            required: true
+            required: false
         },
         istoricService: [{
             actiuni: { type: String, required: false },
