@@ -94,8 +94,8 @@ exports.postEditCar = (req, res, next) => {
                 car.anulFabricatiei = anulFabricatiei;
                 car.tipMotorizare = tipMotorizare;
                 car.capacitateMotor = capacitateMotor;
-                car.caiPutere = caiPutere !== 0 ? caiPutere : kWPutere * 1.36;
-                car.kWPutere = kWPutere !== 0 ? kWPutere : caiPutere / 1.36;
+                car.caiPutere = caiPutere !== 0 ? caiPutere : (kWPutere * 1.36).toFixed(2);
+                car.kWPutere = kWPutere !== 0 ? kWPutere : (caiPutere / 1.36.toFixed(2));
                 car.save();
                 res.json({
                     message: "Masina editata", carEditedInfo: {
@@ -107,8 +107,8 @@ exports.postEditCar = (req, res, next) => {
                         anulFabricatiei,
                         tipMotorizare,
                         capacitateMotor,
-                        caiPutere: caiPutere !== 0 ? caiPutere : kWPutere * 1.36,
-                        kWPutere: kWPutere !== 0 ? kWPutere : caiPutere / 1.36
+                        caiPutere: caiPutere !== 0 ? caiPutere : (kWPutere * 1.36).toFixed(2),
+                        kWPutere: kWPutere !== 0 ? kWPutere : (caiPutere / 1.36).toFixed(2)
                     }
                 })
             });
