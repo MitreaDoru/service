@@ -38,7 +38,7 @@ exports.postAddCar = (req, res, next) => {
         tipMotorizare: tipMotorizare,
         capacitateMotor: capacitateMotor,
         caiPutere: caiPutere ? caiPutere : (kWPutere * 1.36).toFixed(2),
-        kWPutere: kWPutere ? kWPutere : (kWPutere * 1.36).toFixed(2),
+        kWPutere: kWPutere ? kWPutere : (caiPuterePutere / 1.36).toFixed(2),
         clientId: id
     });
     car.save()
@@ -53,7 +53,7 @@ exports.postAddCar = (req, res, next) => {
             tipMotorizare,
             capacitateMotor,
             caiPutere: caiPutere ? caiPutere : (kWPutere * 1.36).toFixed(2),
-            kWPutere: kWPutere ? kWPutere : (kWPutere * 1.36).toFixed(2),
+            kWPutere: kWPutere ? kWPutere : (caiPutere / 1.36).toFixed(2),
         }
     });
 }
