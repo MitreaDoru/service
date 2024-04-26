@@ -38,7 +38,7 @@ exports.postAddCar = (req, res, next) => {
         tipMotorizare: tipMotorizare,
         capacitateMotor: capacitateMotor,
         caiPutere: caiPutere ? caiPutere : (kWPutere * 1.36).toFixed(2),
-        kWPutere: kWPutere ? kWPutere : (caiPuterePutere / 1.36).toFixed(2),
+        kWPutere: kWPutere ? kWPutere : (caiPutere / 1.36).toFixed(2),
         clientId: id
     });
     car.save()
@@ -96,7 +96,7 @@ exports.postEditCar = (req, res, next) => {
                 car.tipMotorizare = tipMotorizare;
                 car.capacitateMotor = capacitateMotor;
                 car.caiPutere = (caiPutere !== 0) ? caiPutere : (kWPutere * 1.36).toFixed(2);
-                car.kWPutere = (kWPutere !== 0) ? kWPutere : (caiPutere / 1.36).toFixed(2);
+                car.kWPutere = ((kWPutere) !== 0) ? kWPutere : (caiPutere / 1.36).toFixed(2);
                 car.istoricService = istoricService
                 car.save();
                 res.json({
