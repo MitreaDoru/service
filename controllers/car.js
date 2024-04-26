@@ -108,7 +108,8 @@ exports.postEditCar = (req, res, next) => {
                         tipMotorizare,
                         capacitateMotor,
                         caiPutere: caiPutere !== 0 ? caiPutere : (kWPutere * 1.36).toFixed(2),
-                        kWPutere: kWPutere !== 0 ? kWPutere : (caiPutere / 1.36).toFixed(2)
+                        kWPutere: kWPutere !== 0 ? kWPutere : (caiPutere / 1.36).toFixed(2),
+                        istoricService: istoricService
                     }
                 })
             });
